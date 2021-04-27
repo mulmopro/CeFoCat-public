@@ -1,0 +1,92 @@
+poly_015
+├── creatorCase.py
+├── Eagostini_POLY_README.txt
+├── geom_poly015
+│   ├── blend_dir
+│   ├── generate.py
+│   ├── Geomrun.sh
+│   ├── Spheres-Auto
+│   │   ├── 1-Setup.py
+│   │   ├── 2-Placement-Automatic.py
+│   │   ├── blendRun.sh
+│   │   ├── export_blender.py
+│   │   └── test.blend
+│   ├── stl_dir
+│   └── VL_periodic.py
+├── perm.csv
+├── permeability.pkl
+├── poly_tree.txt
+├── template_flowfield
+│   ├── 0
+│   │   ├── p
+│   │   └── U
+│   ├── Allclean
+│   ├── bgMesh
+│   ├── constant
+│   │   ├── transportProperties
+│   │   ├── triSurface
+│   │   └── turbulenceProperties
+│   ├── dPore.py
+│   ├── dp.py
+│   ├── fScale.py
+│   ├── meshLink.py
+│   ├── permeability.py
+│   ├── runCase.sh
+│   └── system
+│       ├── blockMeshDict
+│       ├── controlDict
+│       ├── decomposeParDict
+│       ├── fvSchemes
+│       ├── fvSolution
+│       ├── outletVel
+│       ├── residuals
+│       ├── snappyHexMeshDict
+│       ├── topoSetDict
+│       └── volMeanVel
+├── template_mesh
+│   ├── 0
+│   │   ├── p
+│   │   └── U
+│   ├── Allclean
+│   ├── bgMesh
+│   ├── constant
+│   │   ├── transportProperties
+│   │   ├── triSurface
+│   │   └── turbulenceProperties
+│   ├── dPore.py
+│   ├── runMeshing.sh
+│   ├── splitMesh.py
+│   └── system
+│       ├── blockMeshDict
+│       ├── controlDict
+│       ├── fvSchemes
+│       ├── fvSolution
+│       ├── residuals
+│       └── snappyHexMeshDict
+└── template_scalar
+    ├── 0
+    │   └── T
+    ├── Allclean
+    ├── collProp.py
+    ├── constant
+    │   └── transportProperties
+    ├── DT.py
+    ├── runCase.sh
+    └── system
+        ├── controlDict
+        ├── decomposeParDict
+        ├── fvSchemes
+        ├── fvSolution
+        ├── fvSolution.1
+        ├── fvSolution.2
+        ├── fvSolution.3
+        ├── fvSolution.4
+        ├── fvSolution.5
+        ├── fvSolution.6
+        ├── fvSolution.7
+        ├── fvSolution.8
+        ├── residuals
+        ├── topoSetDict
+        └── volFieldValue
+
+18 directories, 71 files

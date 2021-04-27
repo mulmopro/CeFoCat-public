@@ -1,0 +1,110 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+#include "$FOAM_CASE/bgMesh"
+convertToMeters 1;
+L #calc "$REV*$DS";
+Vmin #calc "(-1)*$L/2";
+Vmax #calc "$L/2";
+CC #calc "$REV*$C";
+
+vertices
+(
+    ($Vmin $Vmin $Vmin)     // vertex 0
+    ($Vmax $Vmin $Vmin)     // vertex 1
+    ($Vmax $Vmax $Vmin)        // vertex 2
+    ($Vmin $Vmax $Vmin)     // vertex 3
+    ($Vmin $Vmin $Vmax)     // vertex 4
+    ($Vmax $Vmin $Vmax)        // vertex 5
+    ($Vmax $Vmax $Vmax)        // vertex 6
+    ($Vmin $Vmax $Vmax)        // vertex 7
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) ($CC $CC $CC) simpleGrading (1 1 1) // block 0
+    
+);
+
+edges
+(
+);
+
+boundary
+(
+    front
+    {
+        type patch;
+        faces
+        (
+            (0 4 7 3) // inlet face x direction
+        );
+     }
+
+    back
+    {
+        type patch;
+        faces
+        (
+            (1 2 6 5) // outlet face in x direction
+        );
+        
+    }
+        
+    top
+    {
+        type symmetry;
+        faces
+        (
+            (3 7 6 2)      // top face block 0
+        );
+        
+    }
+
+    bottom
+    {
+        type symmetry;
+        faces
+        (
+            (0 1 5 4)      // bottom face block 0
+        );
+    }
+
+    right
+    {
+        type symmetry;
+        faces
+        (
+            (4 5 6 7)      // right face block 0
+        );
+      
+    }
+
+    left
+    {
+        type symmetry;
+        faces
+        (
+            (0 3 2 1)      // left face block 0
+        );
+        
+    }
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //

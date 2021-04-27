@@ -1,0 +1,152 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// #include "$FOAM_CASE/input_stf.txt"
+
+application     scalarTransportFoam;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         3000;
+
+deltaT          1;
+
+writeControl    timeStep;
+
+writeInterval   3000;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+functions
+
+{
+
+    #includeFunc residuals
+
+
+    fileUpdate1
+    {
+        type              timeActivatedFileUpdate;
+        libs              ("libutilityFunctionObjects.so");
+        writeControl      timeStep;
+        writeInterval     1;
+        fileToUpdate      "$FOAM_CASE/system/fvSolution";
+        timeVsFile
+        (
+            (-1 "$FOAM_CASE/system/fvSolution.1")
+            (100 "$FOAM_CASE/system/fvSolution.2")
+            (200 "$FOAM_CASE/system/fvSolution.3")
+            (300 "$FOAM_CASE/system/fvSolution.4")
+            (400 "$FOAM_CASE/system/fvSolution.5")
+            (600 "$FOAM_CASE/system/fvSolution.6")
+            (800 "$FOAM_CASE/system/fvSolution.7")
+            (1000 "$FOAM_CASE/system/fvSolution.8")
+        );
+    }
+
+    
+    
+    breakthrough
+
+    {
+
+        // Load the library containing the 'coded' functionObject
+
+        libs            ("libutilityFunctionObjects.so");
+
+ 
+
+        type coded;
+
+ 
+
+        // Name of on-the-fly generated functionObject
+
+        name breakthrough;
+
+ 
+
+        codeWrite
+
+        #{
+
+            // Lookup c
+
+            //Info<< "Looking up field c\n" << endl;
+
+            const volScalarField& c = mesh().lookupObject<volScalarField>("T");
+
+            const volVectorField& U = mesh().lookupObject<volVectorField>("U");
+
+ 
+
+            //Get outlet patch
+
+            label patchId = mesh().boundaryMesh().findPatchID("back");
+
+            const scalarField& cOut(c.boundaryField()[patchId]);
+
+            const vectorField& Sf( mesh().Sf().boundaryField()[patchId]);
+
+            const vectorField& Uout(U.boundaryField()[patchId]);
+
+ 
+
+            scalarField fluxOut(cOut*(Uout&Sf));
+
+ 
+
+            scalar totFluxOut = gSum(fluxOut);
+
+ 
+
+ 
+
+            std::ofstream file;
+
+            file.open("breakthrough.dat", std::ios::out | std::ios::app);
+
+            file << mesh().time().timeName()
+
+               << " " << totFluxOut <<"\n";
+
+        #};
+
+    }
+
+}
+
+// ************************************************************************* //
+
+
+
+// ************************************************************************* //

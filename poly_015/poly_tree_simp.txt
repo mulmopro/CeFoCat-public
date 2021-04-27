@@ -1,0 +1,55 @@
+poly_015
+│
+├── creatorCase.py
+│
+├── geom_poly015
+│   ├── blend_dir
+│   ├── generate.py
+│   ├── Geomrun.sh
+│   ├── Spheres-Auto
+│   │   ├── 1-Setup.py
+│   │   ├── 2-Placement-Automatic.py
+│   │   ├── blendRun.sh
+│   │   ├── export_blender.py
+│   │   └── test.blend
+│   │
+│   ├── stl_dir
+│   │
+│   └── VL_periodic.py
+│
+├── perm.csv
+│
+├── permeability.pkl
+│
+├── template_flowfield
+│   ├── 0
+│   ├── Allclean
+│   ├── bgMesh
+│   ├── constant
+│   ├── dPore.py
+│   ├── dp.py
+│   ├── fScale.py
+│   ├── meshLink.py
+│   ├── permeability.py
+│   ├── runCase.sh
+│   └── system
+│
+├── template_mesh
+│   ├── 0
+│   ├── Allclean
+│   ├── bgMesh
+│   ├── constant
+│   ├── dPore.py
+│   ├── runMeshing.sh
+│   ├── splitMesh.py
+│   └── system
+│
+└── template_scalar
+    ├── 0
+    ├── Allclean
+    ├── collProp.py
+    ├── constant
+    ├── DT.py
+    ├── runCase.sh
+    └── system
+

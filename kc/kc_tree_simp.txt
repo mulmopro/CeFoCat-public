@@ -1,0 +1,34 @@
+kc
+├── creatorCase.py
+├── geom_kc
+│   ├── blend_dir
+│   ├── generate.py
+│   ├── Geomrun.sh
+│   ├── kc_foam.py
+│   ├── new_connectivity.csv
+│   ├── new_coord.csv
+│   └── stl_dir
+├── template_flowfield
+│   ├── 0
+│   ├── Allclean
+│   ├── bgMesh
+│   ├── constant
+│   ├── fScale.py
+│   ├── meshLink.py
+│   ├── permeability.py
+│   ├── runCase.sh
+│   └── system
+├── template_mesh
+│   ├── Allclean
+│   ├── bgMesh
+│   ├── constant
+│   ├── runMeshing.sh
+│   └── system
+└── template_scalar
+    ├── 0
+    ├── Allclean
+    ├── collProp.py
+    ├── constant
+    ├── DT.py
+    ├── runCase.sh
+    └── system

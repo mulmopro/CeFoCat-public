@@ -1,0 +1,80 @@
+.
+├── creatorCase.py
+├── Eagostini_KCgen_README.txt
+├── geom_kc
+│   ├── blend_dir
+│   ├── generate.py
+│   ├── Geomrun.sh
+│   ├── kc_foam.py
+│   ├── new_connectivity.csv
+│   ├── new_coord.csv
+│   └── stl_dir
+├── kc_tree_simp.txt
+├── kc_tree.txt
+├── template_flowfield
+│   ├── 0
+│   │   ├── p
+│   │   └── U
+│   ├── Allclean
+│   ├── bgMesh
+│   ├── constant
+│   │   ├── transportProperties
+│   │   ├── triSurface
+│   │   └── turbulenceProperties
+│   ├── fScale.py
+│   ├── meshLink.py
+│   ├── permeability.py
+│   ├── runCase.sh
+│   └── system
+│       ├── blockMeshDict
+│       ├── controlDict
+│       ├── decomposeParDict
+│       ├── fvSchemes
+│       ├── fvSolution
+│       ├── outletVel
+│       ├── residuals
+│       ├── snappyHexMeshDict
+│       ├── topoSetDict
+│       └── volMeanVel
+├── template_mesh
+│   ├── Allclean
+│   ├── bgMesh
+│   ├── constant
+│   │   ├── transportProperties
+│   │   ├── triSurface
+│   │   └── turbulenceProperties
+│   ├── runMeshing.sh
+│   └── system
+│       ├── blockMeshDict
+│       ├── controlDict
+│       ├── fvSchemes
+│       ├── fvSolution
+│       ├── residuals
+│       └── snappyHexMeshDict
+└── template_scalar
+    ├── 0
+    │   └── T
+    ├── Allclean
+    ├── collProp.py
+    ├── constant
+    │   └── transportProperties
+    ├── DT.py
+    ├── runCase.sh
+    └── system
+        ├── controlDict
+        ├── decomposeParDict
+        ├── fvSchemes
+        ├── fvSolution
+        ├── fvSolution.1
+        ├── fvSolution.2
+        ├── fvSolution.3
+        ├── fvSolution.4
+        ├── fvSolution.5
+        ├── fvSolution.6
+        ├── fvSolution.7
+        ├── fvSolution.8
+        ├── residuals
+        ├── topoSetDict
+        └── volFieldValue
+
+16 directories, 61 files
