@@ -48,7 +48,7 @@ SHARING/ACCESS INFORMATION
 
 
 DATA & FILE OVERVIEW
-
+```
 1. File List:							# VL = Voronoi-laguerre, VO = Voronoi, OF = OpenFOAM
 
 poly_015								# Main directory
@@ -105,7 +105,7 @@ poly_015								# Main directory
     ├── DT.py							# Python script to calculate diffusivity (starting from Re and Pe)
     ├── runCase.sh						# Shell script that contains all the commands to exec the OF case
     └── system							# Contains the simulation control dictionaries
-
+```
 
 2. Relationship between files, if important: 
 

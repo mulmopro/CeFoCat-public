@@ -46,7 +46,7 @@ SHARING/ACCESS INFORMATION
 
 
 DATA & FILE OVERVIEW
-
+```
 1. File List:					# KC = Kelvin's Cell, OF = OpenFOAM
 
 kc 								# Main directory
@@ -87,7 +87,7 @@ kc 								# Main directory
     ├── DT.py					# Python script to calculate diffusivity (starting from Re and Pe)
     ├── runCase.sh				# Shell script that contains all the commands to exec
     └── system					# Contains the simulation control dictionaries
-
+```
 2. Relationship between files, if important: 
 
 	1) Geometry generation:
