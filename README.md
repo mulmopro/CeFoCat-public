@@ -35,13 +35,15 @@ SHARING/ACCESS INFORMATION
 
 1. Licenses/restrictions placed on the data: 
 
-2. Links to publications that cite or use the data: 
+2. Links to publications that cite or use the data: Agostini E., et al.,
+"An open-source workflow for open-cell foams modelling: geometry generation and CFD simulations for momentum and mass transport",
+Chemical Engineering Science, 2022, https://doi.org/10.1016/j.ces.2022.117583
 
 3. Links to other publicly accessible locations of the data: 
 
 4. Was data derived from another source? yes
 	A. If yes, list source(s): 
-		"BSands" code developed by: Boccardo, Gianluca, et al. "Validation of a novel open-source work-flow for the
+		"BSand" code developed by: Boccardo, G., et al. "Validation of a novel open-source work-flow for the
 		simulation of packed-bed reactors." Chemical Engineering Journal 279 (2015): 809-820.
 
 5. Recommended citation for this dataset: 
