@@ -1,4 +1,4 @@
-﻿This Eagostini_POLY_readme.txt file was generated on 2021-03-31 by Enrico Agostini
+﻿This Eagostini_POLY_readme.txt file was generated on 2021-03-31 by Enrico Agostini.
 
 GENERAL INFORMATION
 
